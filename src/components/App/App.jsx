@@ -4,7 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Pizza from "../Pizza/Pizza.jsx";
 import CustomerForm from "../CustomerForm/CustomerForm.jsx";
-// import Checkout from "../Checkout/Checkout.jsx";
+import Checkout from "../Checkout/Checkout.jsx";
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
           <CustomerForm />
         </Route>
         <Route path="/checkout">
-          {/* <Checkout /> */}
+          <Checkout />
         </Route>
     </div>
     </Router>
