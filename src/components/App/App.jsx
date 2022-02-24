@@ -22,11 +22,11 @@ function App() {
         <Route path="/" exact>
          <Pizza />
         </Route>
-        <Route >
-          <CustomerForm path="/customerform"/>
+        <Route path="/customerform" >
+          <CustomerForm />
         </Route>
-        <Route>
-          <Checkout path="/checkout"/>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
     </div>
     </Router>
