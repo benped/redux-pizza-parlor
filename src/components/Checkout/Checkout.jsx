@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import './Checkout.css'
 
 function Checkout() {
 
@@ -10,8 +11,10 @@ function Checkout() {
 
     const history = useHistory();
 
-    function handleCheckout() {
+    const handleCheckout = () => {
         console.log('Checkout Button Clicked');
+        console.log('Customer is', customer);
+        console.log('cart is', cart);
         axios.post('/orders',
             {
                 customer_name: customer.customer_name,
@@ -28,7 +31,7 @@ function Checkout() {
                 console.log('Failed to add the order', error);
             })
     }
-    
+
     return (
         <div>
             <h3>Step 3: Checkout</h3>
