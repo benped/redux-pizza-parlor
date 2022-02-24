@@ -7,7 +7,7 @@ import './Checkout.css'
 function Checkout() {
 
     const customer = useSelector(store => store.customerReducer);
-    const cart = useSelector(store => store.cartReducer);
+    const cart = useSelector(store => store.pizzaReducer);
 
     const history = useHistory();
 
