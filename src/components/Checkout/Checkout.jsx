@@ -28,6 +28,7 @@ function Checkout() {
                 console.log('Failed to add the order', error);
             })
     }
+    
     return (
         <div>
             <h3>Step 3: Checkout</h3>
