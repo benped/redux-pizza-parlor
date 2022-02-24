@@ -8,6 +8,8 @@ function CustomerForm() {
     const address = [address, setAddress] = useState('')
     const city = [city, setCity] = useState('')
     const zip = [zip, setZip] = useState('')
+    const delivery = [delivery, setDelivery] = useState(False)
+    const pickup = [pickup, setPickup] = useState(False)
 
     return (
         <>
@@ -34,8 +36,12 @@ function CustomerForm() {
                 value={zip}
                 onChange={(event) => setZip(event.target.value)} />
 
-                <input type="radio" />
-                <input type="radio" />
+                <label htmlFor="">Delivery</label>
+                <input type="radio" 
+                onChange={() => setDelivery(!delivery)}/>
+                <label htmlFor="">Pick-up</label>
+                <input type="radio" 
+                onChange={() => setPickup(!pickup)}/>
 
             </form>
         </>
