@@ -8,8 +8,6 @@ function Pizza() {
         getPizzas();
     }, [])
 
-
-
     
     const [array, setArray] = useState([]);
 
