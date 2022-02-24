@@ -5,6 +5,7 @@ import App from './components/App/App';
 // redux stuff
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 const pizzaReducer = (state = [], action) => {
     console.log('mmm pizza');
