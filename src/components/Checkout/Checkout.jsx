@@ -33,10 +33,15 @@ function handleCheckout() {
                         {cart.map((pizza, i) => (
                             <tr key={i}>
                                 <td>{pizza.id}</td>
+                                <td>{pizza.price}</td>
                              </tr>
                         ))}
                     </tbody>
                 </table>
+            </div>
+            <div className="subTotal">
+                <h3>Total: </h3>
+                <button onClick={handleCheckout}>Checkout</button>
             </div>
         </div>
 
