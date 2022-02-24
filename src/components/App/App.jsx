@@ -34,3 +34,33 @@ function App() {
 }
 
 export default App;
+
+
+// Heather - add this to /pizza at top:
+
+// import { HashRouter as Router, Route, Link } from "react-router-dom";
+
+
+// And inside the return: 
+
+// <Link to="/customerform"><button>Next</button></Link>
+
+
+
+// Koffi - add this to /customerform at top:
+
+// import { HashRouter as Router, Route, Link } from "react-router-dom";
+
+
+// And inside the return: 
+// <Link to="/checkout"><button>Next</button></Link>
+
+
+
+// Brandon - add this to /checkout at top: 
+
+// import { HashRouter as Router, Route, Link } from "react-router-dom";
+
+
+// and inside the return:
+// <Link to="/"><button>Checkout</button></Link>
