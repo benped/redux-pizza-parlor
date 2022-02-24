@@ -25,7 +25,7 @@ function PizzaItem ({pizza, setPizzaOrder}) {
     return (
         <div>
         
-            {pizza.image_path}
+            <img src={pizza.image_path}/>
             {pizza.name}
             {pizza.description}
             {pizza.price}

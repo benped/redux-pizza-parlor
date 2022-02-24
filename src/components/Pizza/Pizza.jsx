@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react';
 import PizzaItem from '../PizzaItem/PizzaItem';
 
 function Pizza() {
+    useEffect(()=> {
+        getPizzas();
+    }, [])
+
+
 
     
     const [array, setArray] = useState([]);
@@ -25,7 +30,7 @@ function Pizza() {
                 <h1>Hello</h1>
                 {array.map((pizza) =>
                 (<div key={pizza.id}>
-                    <PizzaItem setPizzaOrder={setPizzaOrder} pizza={pizza}/>
+                    <PizzaItem pizza={pizza}/>
                 </div>)
                 )}
             </div>
