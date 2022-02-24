@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -8,8 +9,23 @@ const customer = useSelector(store => store.customerReducer);
 const cart = useSelector(store => store.cartReducer);
 const dispatch = useDispatch();
 
+
 function handleCheckout() {
     console.log('Checkout Button Clicked');
+    axios.post('/orders',
+     {
+        customer_name: customer.customer_name,
+        street_address: customer.street_address,
+        city: customer.city,
+        zip: customer.zip,
+        type: customer.type,
+        total: cart.total,
+        pizzas: [cart]
+     }).then(response => {
+         console.log('We posted the stuff', response);
+     }).catch(error => {
+         console.log('Failed to add the order', error);
+     })
 }
     return (
         <div>
