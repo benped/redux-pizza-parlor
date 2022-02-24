@@ -1,4 +1,5 @@
 import axios from "axios";
+import './Admin.css';
 import React, { useState, useEffect } from "react";
 
 function Admin() {
@@ -9,6 +10,7 @@ function Admin() {
     getOrders();
   }, []);
 
+  // Get orders pulls all rows from the table "orders"
   const getOrders = () =>
     axios
       .get("/api/order")
@@ -37,13 +39,14 @@ function Admin() {
                                 {pizza.customer_name}
                             </td>
                             <td>
-                                {pizza.time}
+                                {/* Sliced to the date, no time yet */}
+                                {pizza.time.slice(0,10)}
                             </td>
                             <td>
                                 {pizza.type}
                             </td>
                             <td>
-                                {pizza.total}
+                                ${pizza.total}
                             </td>
                         </tr>
                     ))}

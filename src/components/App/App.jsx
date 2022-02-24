@@ -18,19 +18,19 @@ function App() {
         <p>Checkout Total hold for later</p>
       </header>
   
-      {/* <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p> */}
+      <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p>
         {/* <Route path="/" exact>
          <Pizza />
-        </Route> */}
-        {/* <Route >
+        </Route>
+        <Route >
           <CustomerForm path="/customerform"/>
         </Route>
         <Route>
           <Checkout path="/checkout"/>
         </Route> */}
-        <Route>
-          <Admin path="/admin"/>
+        <Route path="/admin">
+          <Admin />
         </Route>
     </div>
     </Router>
