@@ -1,43 +1,45 @@
 import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 function Checkout() {
 
-const customer = useSelector(store => store.customerReducer);
-const cart = useSelector(store => store.cartReducer);
+    const customer = useSelector(store => store.customerReducer);
+    const cart = useSelector(store => store.cartReducer);
 
-const history = useHistory();
+    const history = useHistory();
 
-function handleCheckout() {
-    console.log('Checkout Button Clicked');
-    axios.post('/orders',
-     {
-        customer_name: customer.customer_name,
-        street_address: customer.street_address,
-        city: customer.city,
-        zip: customer.zip,
-        type: customer.type,
-        total: cart.total,
-        pizzas: [cart]
-     }).then(response => {
-        console.log('We posted the stuff', response);
-        history.push('/');
-     }).catch(error => {
-         console.log('Failed to add the order', error);
-     })
-}
+    function handleCheckout() {
+        console.log('Checkout Button Clicked');
+        axios.post('/orders',
+            {
+                customer_name: customer.customer_name,
+                street_address: customer.street_address,
+                city: customer.city,
+                zip: customer.zip,
+                type: customer.type,
+                total: cart.total,
+                pizzas: [cart]
+            }).then(response => {
+                console.log('We posted the stuff', response);
+                history.push('/');
+            }).catch(error => {
+                console.log('Failed to add the order', error);
+            })
+    }
     return (
         <div>
             <h3>Step 3: Checkout</h3>
             <div className="customerInfo">
-                <p>{customer.customer_name}</p>
-                <p>{customer.street_address}</p>
-                <p>{customer.city} {customer.zip}</p>
-
-                <h4>{customer.type}</h4>
+                <div id="customerAddress">
+                    <p>{customer.customer_name}</p>
+                    <p>{customer.street_address}</p>
+                    <p>{customer.city} {customer.zip}</p>
+                </div>
+                <div id="orderType">
+                    <h4>{customer.type}</h4>
+                </div>
             </div>
             <div>
                 <table className="styled-table">
@@ -52,7 +54,7 @@ function handleCheckout() {
                             <tr key={i}>
                                 <td>{pizza.name}</td>
                                 <td>{pizza.price}</td>
-                             </tr>
+                            </tr>
                         ))}
                     </tbody>
                 </table>

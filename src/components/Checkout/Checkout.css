@@ -34,3 +34,9 @@
     font-weight: bold;
     color: #2e6b9a;
 }
+
+#customerInfo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
