@@ -3,11 +3,12 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Pizza from "../Pizza/Pizza.jsx";
-import CustomerForm from "../CustomerForm/CustomerForm.jsx";
-import Checkout from "../Checkout/Checkout.jsx";
+// import CustomerForm from "../CustomerForm/CustomerForm.jsx";
+// import Checkout from "../Checkout/Checkout.jsx";
 
 function App() {
 
+   
   return (
     <Router>
 
@@ -19,15 +20,15 @@ function App() {
   
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}
-        <Route path="/" exact>
+        <Route path="/" exact> 
          <Pizza />
-        </Route>
-        <Route >
+       </Route> 
+        {/* <Route >
           <CustomerForm path="/customerform"/>
         </Route>
         <Route>
           <Checkout path="/checkout"/>
-        </Route>
+        </Route> */}
     </div>
     </Router>
   );
