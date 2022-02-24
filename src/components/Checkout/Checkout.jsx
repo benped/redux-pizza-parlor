@@ -32,7 +32,7 @@ function handleCheckout() {
                     <tbody>
                         {cart.map((pizza, i) => (
                             <tr key={i}>
-                                <td>{pizza.id}</td>
+                                <td>{pizza.name}</td>
                                 <td>{pizza.price}</td>
                              </tr>
                         ))}
