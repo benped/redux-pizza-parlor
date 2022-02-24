@@ -8,6 +8,7 @@ import Checkout from "../Checkout/Checkout.jsx";
 
 function App() {
 
+   
   return (
     <Router>
 
@@ -17,13 +18,13 @@ function App() {
         <p>Checkout Total (hold for later)</p>
       </header>
   
-      {/* <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p> */}
-        <Route path="/" exact>
+      <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p>
+        <Route path="/" exact> 
          <Pizza />
-        </Route>
-        <Route path="/customerform" >
-          <CustomerForm />
+       </Route> 
+        <Route >
+          <CustomerForm path="/customerform"/>
         </Route>
         <Route path="/checkout">
           <Checkout />
