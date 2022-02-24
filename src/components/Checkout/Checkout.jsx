@@ -33,6 +33,7 @@ function handleCheckout() {
                         {cart.map((pizza, i) => (
                             <tr key={i}>
                                 <td>{pizza.id}</td>
+                             </tr>
                         ))}
                     </tbody>
                 </table>
