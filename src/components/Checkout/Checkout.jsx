@@ -1,14 +1,15 @@
 import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Checkout() {
 
 const customer = useSelector(store => store.customerReducer);
 const cart = useSelector(store => store.cartReducer);
-const dispatch = useDispatch();
 
+const history = useHistory();
 
 function handleCheckout() {
     console.log('Checkout Button Clicked');
@@ -22,7 +23,8 @@ function handleCheckout() {
         total: cart.total,
         pizzas: [cart]
      }).then(response => {
-         console.log('We posted the stuff', response);
+        console.log('We posted the stuff', response);
+        history.push('/');
      }).catch(error => {
          console.log('Failed to add the order', error);
      })
@@ -37,8 +39,8 @@ function handleCheckout() {
 
                 <h4>{customer.type}</h4>
             </div>
-            <div className="orderTable">
-                <table>
+            <div>
+                <table className="styled-table">
                     <thead>
                         <tr>
                             <th>Name</th>
