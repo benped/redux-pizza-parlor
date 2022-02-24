@@ -14,7 +14,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
-        <p>Checkout Total (hold for later></p>
+        <p>Checkout Total (hold for later)</p>
       </header>
   
       {/* <img src='images/pizza_photo.png' />
@@ -22,11 +22,11 @@ function App() {
         <Route path="/" exact>
          <Pizza />
         </Route>
-        <Route >
-          <CustomerForm path="/customerform"/>
+        <Route path="/customerform" >
+          <CustomerForm />
         </Route>
-        <Route>
-          <Checkout path="/checkout"/>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
     </div>
     </Router>
