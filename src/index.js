@@ -10,7 +10,19 @@ import logger from 'redux-logger';
 const pizzaReducer = (state = [], action) => {
     if (action.type === 'ADD_PIZZA') {
         return [...state, action.payload];
-    } 
+    } else if(action.type === 'REMOVE_PIZZA') {
+        state = [...state];
+        const pizzaToDelete = action.payload;
+        console.log('remove pizza state is', state);
+        console.log('pizzaToDelete is', action.payload);
+        function deletePizza (pizza){
+            return pizza.id !==pizzaToDelete.id;
+        }
+        const result = state.filter(deletePizza);
+        console.log('result is', result);
+        return result;
+         
+    }
     return state;
 }
 
