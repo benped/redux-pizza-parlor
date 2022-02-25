@@ -9,28 +9,26 @@ import Admin from "../Admin/Admin.jsx";
 
 function App() {
 
+   
   return (
     <Router>
 
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
-        <p>Checkout Total hold for later</p>
+        <p>Checkout Total (hold for later)</p>
       </header>
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-        {/* <Route path="/" exact>
+        <Route path="/" exact> 
          <Pizza />
+       </Route> 
+        <Route path="/customerform">
+          <CustomerForm />
         </Route>
-        <Route >
-          <CustomerForm path="/customerform"/>
-        </Route>
-        <Route>
-          <Checkout path="/checkout"/>
-        </Route> */}
-        <Route path="/admin">
-          <Admin />
+        <Route path="/checkout">
+          <Checkout />
         </Route>
     </div>
     </Router>
