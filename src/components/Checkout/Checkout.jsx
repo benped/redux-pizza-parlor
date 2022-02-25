@@ -9,7 +9,6 @@ function Checkout() {
     const customer = useSelector(store => store.customerReducer);
     const cart = useSelector(store => store.pizzaReducer);
 
-
     const history = useHistory();
 
     const handleCheckout = () => {
