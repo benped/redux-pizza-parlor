@@ -1,0 +1,13 @@
+.pizzaCard {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    justify-content: space-between;
+}
+
+.cardButton {
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+}

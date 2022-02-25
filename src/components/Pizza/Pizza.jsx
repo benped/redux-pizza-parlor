@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import PizzaItem from '../PizzaItem/PizzaItem';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import './Pizza.css';
-
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 function Pizza() {
     useEffect(()=> {
         getPizzas();
@@ -32,8 +33,12 @@ function Pizza() {
                     <PizzaItem pizza={pizza}/>
                 </div>)
                 )}
-            </div>
-            <Link to="/customerform"><button>Next</button></Link>
+            </div >
+            
+            <Box sx={{ p: 10 }}>
+            <Link  to="/customerform"><Button variant="contained" size="large" p={10}>Next</Button></Link>
+
+            </Box>
             </div>
         )
     }
