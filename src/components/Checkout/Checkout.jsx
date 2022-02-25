@@ -15,15 +15,15 @@ function Checkout() {
         console.log('Checkout Button Clicked');
         console.log('Customer is', customer);
         console.log('cart is', cart);
-        axios.post('/orders',
+        axios.post('api/order',
             {
-                customer_name: customer.customer_name,
-                street_address: customer.street_address,
-                city: customer.city,
-                zip: customer.zip,
-                type: customer.type,
-                total: cart.total,
-                pizzas: [cart]
+                customer_name: customer[0].customer_name,
+                street_address: customer[0].street_address,
+                city: customer[0].city,
+                zip: customer[0].zip,
+                type: customer[0].type,
+                total: cart[0].total,
+                pizzas: customer[0].pizza
             }).then(response => {
                 console.log('We posted the stuff', response);
                 history.push('/');
@@ -37,12 +37,12 @@ function Checkout() {
             <h3>Step 3: Checkout</h3>
             <div className="customerInfo">
                 <div id="customerAddress">
-                    <p>{customer.customer_name}</p>
-                    <p>{customer.street_address}</p>
-                    <p>{customer.city} {customer.zip}</p>
+                    <p>{customer[0].customer_name}</p>
+                    <p>{customer[0].street_address}</p>
+                    <p>{customer[0].city} {customer[0].zip}</p>
                 </div>
                 <div id="orderType">
-                    <h4>{customer.type}</h4>
+                    <h4>{customer[0].type}</h4>
                 </div>
             </div>
             <div>

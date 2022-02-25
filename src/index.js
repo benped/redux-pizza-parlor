@@ -26,7 +26,7 @@ const pizzaReducer = (state = [], action) => {
     return state;
 }
 
-const customerReducer = (state = [], action) => {
+const customerReducer = (state = '', action) => {
     console.log('I AM THE MANAGER!');
 
     if(action.type === 'ADD_CUSTOMER'){

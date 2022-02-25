@@ -16,7 +16,8 @@ router.get('/', (req, res) => {
 // POST a new order
 router.post('/', async (req, res) => {
     const client = await pool.connect();
-
+    console.log(req.body);
+    
     try {
         const {
             customer_name,

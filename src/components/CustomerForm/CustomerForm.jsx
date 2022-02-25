@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function CustomerForm() {
@@ -11,14 +12,15 @@ function CustomerForm() {
     //initialize dispatch
     const dispatch = useDispatch()
 
+
     // initialize usestate variables
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
     const [zip, setZip] = useState('')
     const [received, setReceived] = useState('')
-
-
+    const pizza = useSelector(store => store.pizzaReducer)
+    
 
     const handleSubmit = (event) => {
 
@@ -31,7 +33,7 @@ function CustomerForm() {
             zip: zip,
             type: received,
             total: '',
-            pizza: []
+            pizza: pizza
         }
         console.log('we are now submitting', customer);
 
