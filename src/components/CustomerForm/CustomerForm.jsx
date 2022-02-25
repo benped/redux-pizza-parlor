@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function CustomerForm() {
 
+    const history = useHistory()
+
     //initialize dispatch
     const dispatch = useDispatch()
+
 
     // initialize usestate variables
     const [name, setName] = useState('')
@@ -14,29 +19,35 @@ function CustomerForm() {
     const [city, setCity] = useState('')
     const [zip, setZip] = useState('')
     const [received, setReceived] = useState('')
+    const pizza = useSelector(store => store.pizzaReducer)
+    
 
-    const customer = {
-        name: name,
-        address: address,
-        city: city,
-        zip: zip,
-        received: received
-    }
+    const handleSubmit = (event) => {
 
+        event.preventDefault();
 
-    const handleSubmit = () => {
+        const customer = {
+            customer_name: name,
+            street_address: address,
+            city: city,
+            zip: zip,
+            type: received,
+            total: '',
+            pizza: pizza
+        }
         console.log('we are now submitting', customer);
 
         // sending customer data into the customer reducer
-        // dispatch({
-        //     type: 'SOMETHING',
-        //     payload: hmmmmm
-        // })
+        dispatch({
+            type: 'ADD_CUSTOMER',
+            payload: customer
+        })
+        history.push("/checkout")
     }// end handleSubmit 
 
     return (
         <>
-            <form on onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit}>
                 <h1>Step 2: Customer Information</h1>
                 <input
                     type="text"
@@ -67,10 +78,9 @@ function CustomerForm() {
                         name='received'
                         onChange={() => setReceived('pickup')} />
                     <label htmlFor="">Pick-up</label>
-                    <button type='submit' >submit</button>
                 </div>
+            <button type='submit'>Next</button>
             </form>
-            <Link to="/checkout"><button>Next</button></Link>
         </>
     )
 }
