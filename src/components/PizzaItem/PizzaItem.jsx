@@ -1,12 +1,15 @@
 import {useDispatch} from 'react-redux';
-import { useState, useEffect } from 'react'; 
+import { useState} from 'react'; 
 
-function PizzaItem ({pizza, setPizzaOrder}) {
+
+function PizzaItem ({pizza}) {
     console.log("In PizzaItem");
+
     const dispatch = useDispatch();
     const [select, setSelect] = useState('false');
 
     const addPizza = () => {
+            setSelect(!select);
             dispatch({
                 type:'ADD_PIZZA',
                 payload: pizza
@@ -14,6 +17,7 @@ function PizzaItem ({pizza, setPizzaOrder}) {
     }
 
     const removePizza = () => {
+        setSelect(!select);
         dispatch({
             type:'REMOVE_PIZZA',
             payload: pizza
@@ -23,16 +27,16 @@ function PizzaItem ({pizza, setPizzaOrder}) {
   
 
     return (
+        <>
         <div>
-        
             <img src={pizza.image_path}/>
-            {pizza.name}
-            {pizza.description}
-            {pizza.price}
-            <button onClick={addPizza}>ADD</button>
-            <button onClick={removePizza}>REMOVE</button>
-           
+            {pizza.name}<br></br>
+            {pizza.description}<br></br>
+            Price: {pizza.price}<br></br>
+            {select?  <button onClick={addPizza}>ADD</button> : <button onClick={removePizza}>REMOVE</button>}
         </div>
+            
+        </>
     )
 }
 
