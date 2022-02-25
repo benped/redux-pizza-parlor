@@ -2,13 +2,13 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import PizzaItem from '../PizzaItem/PizzaItem';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import './Pizza.css';
 
 function Pizza() {
     useEffect(()=> {
         getPizzas();
     }, [])
-
-
 
     
     const [array, setArray] = useState([]);
@@ -25,17 +25,19 @@ function Pizza() {
         })
     }
         return (
-
             <div>
-                <h1>Hello</h1>
+            <div className="container">
                 {array.map((pizza) =>
                 (<div key={pizza.id}>
                     <PizzaItem pizza={pizza}/>
                 </div>)
                 )}
             </div>
+            <Link to="/customerform"><button>Next</button></Link>
+            </div>
         )
     }
 
 export default Pizza;
+
 
