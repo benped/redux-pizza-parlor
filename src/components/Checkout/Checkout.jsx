@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import './Checkout.css';
+import { useDispatch } from "react-redux";
 
 
 function Checkout() {
@@ -11,6 +12,7 @@ function Checkout() {
     const cart = useSelector(store => store.pizzaReducer);
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     let total = 0; 
 
@@ -43,6 +45,8 @@ function Checkout() {
             }).then(response => {
                 console.log('We posted the stuff', response);
                 history.push('/');
+                dispatch({type: 'CLEAR_PIZZA'});
+                dispatch({type: 'CLEAR_CUSTOMER'});
             }).catch(error => {
                 console.log('Failed to add the order', error);
             })

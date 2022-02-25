@@ -22,6 +22,8 @@ const pizzaReducer = (state = [], action) => {
         console.log('result is', result);
         return result;
          
+    } else if (action.type === 'CLEAR_PIZZA') {
+        return state =[]
     }
     return state;
 }
@@ -31,6 +33,8 @@ const customerReducer = (state = '', action) => {
 
     if(action.type === 'ADD_CUSTOMER'){
         return [action.payload];
+    } else if(action.type === 'CLEAR_CUSTOMER') {
+        return state = '';
     }
     return state
 }
