@@ -6,6 +6,7 @@ import Pizza from "../Pizza/Pizza.jsx";
 import CustomerForm from "../CustomerForm/CustomerForm.jsx";
 import Checkout from "../Checkout/Checkout.jsx";
 import Admin from "../Admin/Admin.jsx";
+import Total from '../Total/Total.jsx';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
         {/* <p>Checkout Total (hold for later)</p> */}
+        <Total />
       </header>
   
       {/* <img src='images/pizza_photo.png' />
