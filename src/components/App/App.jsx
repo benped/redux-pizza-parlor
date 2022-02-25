@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-// import Pizza from "../Pizza/Pizza.jsx";
-// import CustomerForm from "../CustomerForm/CustomerForm.jsx";
-// import Checkout from "../Checkout/Checkout.jsx";
+import Pizza from "../Pizza/Pizza.jsx";
+import CustomerForm from "../CustomerForm/CustomerForm.jsx";
+import Checkout from "../Checkout/Checkout.jsx";
 import Admin from "../Admin/Admin.jsx";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
         <p>Checkout Total (hold for later)</p>
       </header>
   
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+      {/* <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p> */}
         <Route path="/" exact> 
          <Pizza />
        </Route> 
@@ -29,6 +29,9 @@ function App() {
         </Route>
         <Route path="/checkout">
           <Checkout />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
     </div>
     </Router>
